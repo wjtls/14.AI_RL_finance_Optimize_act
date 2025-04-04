@@ -1,2 +1,0 @@
-self.epi_reward_data,self.cumul_reward_data,self.policy_loss_data,self.value_loss_data,self.cumul_PV_data
-0.0,-1998.9644775390625,37.32624053955078,11.368258476257324,394.1393127441406

@@ -392,7 +392,7 @@ class back_testing:
 
         print((((market_last / market_first) - 1) * 100).item(), ':Market ratio of long return')
         print(float(((self.PV_data[is_short_or_long][-1] + self.agent.init_cash) / (self.PV_data[is_short_or_long][0] + self.agent.init_cash) - 1) * 100),'% :' + is_short_or_long + '_agent PV return')
-
+        print(self.long_scale_input,'지표값')
         if params.coin_or_stock=='future': #선물인경우
             print(float((((self.PV_data[is_short_or_long][-1]-self.agent.init_cash) / self.agent.deposit)) * 100),'% :' + is_short_or_long + '_agent 증거금 대비 PV return')
 
