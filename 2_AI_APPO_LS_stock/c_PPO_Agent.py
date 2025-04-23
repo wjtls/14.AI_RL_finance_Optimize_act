@@ -1,6 +1,5 @@
 #정규화 및 전처리 계산
 import pandas as pd
-
 import e_train as params
 import copy
 
@@ -16,6 +15,7 @@ from torch.distributions import Categorical
 from torch.utils.data import TensorDataset, DataLoader
 
 ####################################외부 py 호출
+
 import a_Env as Env_
 import b_network as NET
 import pandas as pd

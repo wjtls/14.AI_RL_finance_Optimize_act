@@ -15,6 +15,8 @@ class QLSTM(nn.Module):
                  backend="default.qubit",
                  device='cpu'):
 
+
+
         super(QLSTM, self).__init__()
         self.device= device
         self.n_inputs = input_size
