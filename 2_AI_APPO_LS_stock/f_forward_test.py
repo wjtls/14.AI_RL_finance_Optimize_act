@@ -22,6 +22,7 @@ import mojito
 import pprint
 import json
 
+
 seed=1
 random.seed(seed)
 np.random.seed(seed)

@@ -26,6 +26,7 @@ env=env_.Env()
 
 
 
+
 class back_testing:
     def __init__(self,train_val_test,path):
         # 시뮬 data
@@ -263,7 +264,6 @@ class back_testing:
         if params.train_stock_or_future != 'future':
             self.decide_action = self.agent.SC_decide_action
             self.discrete_step = self.agent.SC_discrete_step
-            print('주식처럼 백테스트')
 
         ##저장된 가중치 load
         policy_net.load()

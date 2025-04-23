@@ -213,7 +213,7 @@ class PPO(nn.Module, Env):
 
 
     def SC_decide_action(self, policy):  #discrete decide action  stock이나 코인일때
-
+        
         policy1 = torch.clamp(policy, 0, 1)
         action_s = Categorical(policy1)
         action = action_s.sample()  # 매도시 최소 1주 매도
@@ -242,11 +242,8 @@ class PPO(nn.Module, Env):
             min_sell_unit = 1
 
 
-
-
         if action == 0:  # 매도
             unit0 = policy1[0].item() * self.stock
-
             if params.train_stock_or_future == 'coin': # 코인인경우 (코인이지만 설정된 일정수량씩 매매)
                 if unit0 >= limit_sell_unit:
                     unit0 = torch.Tensor([limit_sell_unit]).to(params.device)
@@ -260,7 +257,6 @@ class PPO(nn.Module, Env):
             else:
                 unit0 = max(torch.Tensor([policy1[0].item() * self.stock]), torch.Tensor([min_sell_unit]))
                 unit0 = torch.round(unit0)
-
                 if unit0 >= limit_sell_unit:
                     unit0 = torch.Tensor([limit_sell_unit]).to(params.device)
                 '''
